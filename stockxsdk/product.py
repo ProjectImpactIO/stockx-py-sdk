@@ -9,3 +9,5 @@ class StockxProduct(object):
         self.image = product['media']['imageUrl']
         children = [product['children'][child] for child in product['children']]
         self.sizes = {child['shoeSize']: child['id'] for child in children}
+        self.average = product['averageDeadstockPrice']
+        self.premium = product['pricePremium']
